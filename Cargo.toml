@@ -1,0 +1,15 @@
+[package]
+
+name = "seqproc"
+version = "0.0.1"
+authors = [ "Timothy Woodford <timthewoodford@gmail.com>" ]
+
+[[bin]]
+
+name = "fractal"
+
+[dependencies]
+getopts = "0.2"
+image = "0.3"
+threadpool = "0.1"
+num = "0.1"
