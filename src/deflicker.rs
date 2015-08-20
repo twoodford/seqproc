@@ -38,7 +38,20 @@ fn main() {
         Err(e) => panic!("{:?}", e),
     };
     let seq_luma = seqproc::get_seq_luma(imgseq);
+    //let avg_luma: f64 = seq_luma.iter().sum::<f64>()/(seq_luma.len() as f64);
+    // workaround until stdlib stabilizes sum:
+    let avg_luma = sum_f64(seq_luma.iter())/(seq_luma.len() as f64);
     for n in seq_luma {
-        print!("{}\n", n);
+        println!("{}", n);
     }
+    println!("Average luma: {}", avg_luma);
+}
+
+// workaround until stdlib stabilizes sum()
+fn sum_f64(numbers: std::slice::Iter<f64>) -> f64 {
+    let mut sum: f64 = 0 as f64;
+    for n in numbers {
+        sum += *n;
+    }
+    sum
 }

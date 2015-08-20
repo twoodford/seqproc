@@ -6,7 +6,7 @@ authors = [ "Timothy Woodford <timthewoodford@gmail.com>" ]
 
 [[bin]]
 
-name = "fractal"
+name = "deflicker"
 
 [dependencies]
 getopts = "0.2"
